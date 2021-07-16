@@ -1,20 +1,64 @@
 import java.util.Scanner;
 
-public class Calc {
+public class CalculadoraSimples {
 
-    public int Adicao(int num1, int num2) { int resultado = num1 + num2; return resultado; }
+    Scanner input = new Scanner(System.in);
 
-    public int Subtracao(int num1, int num2) {  int resultado = num1 - num2; return resultado; }
+    public int Adicao() {
 
-    public int Divisao(int num1, int num2) { int resultado = num1 / num2; return resultado; }
+        System.out.println("Digite o Primeiro Valor: ");
+        int num1 = input.nextInt();
+        System.out.println("Digite o Segundo Valor: ");
+        int num2 = input.nextInt();
 
-    public int Multipicacao(int num1, int num2) { int resultado = num1 * num2; return resultado; }
+        int resultado = num1 + num2;
+
+        return resultado;
+
+    }
+
+    public int Subtracao() { 
+
+        System.out.println("Digite o Primeiro Valor: ");
+        int num1 = input.nextInt();
+        System.out.println("Digite o Segundo Valor: ");
+        int num2 = input.nextInt();
+
+        int resultado = num1 - num2; 
+
+        return resultado;
+
+    }
+
+    public int Divisao() {
+
+        System.out.println("Digite o Primeiro Valor: ");
+        int num1 = input.nextInt();
+        System.out.println("Digite o Segundo Valor: ");
+        int num2 = input.nextInt();
+
+        int resultado = num1 / num2; 
+        
+        return resultado;
+    }
+
+    public int Multipicacao() { 
+       
+        System.out.println("Digite o Primeiro Valor: ");
+        int num1 = input.nextInt();
+        System.out.println("Digite o Segundo Valor: ");
+        int num2 = input.nextInt();
+       
+        int resultado = num1 * num2;  
+    
+        return resultado;
+
+    }
 
     public static void main(String[] args) {
     
         Scanner input = new Scanner(System.in);
 
-        int num1, num2;
     
         System.out.println("Seja bem Vindo!!!");
         System.out.println("Selecione a Operação!");
@@ -26,55 +70,33 @@ public class Calc {
 
         int opcoes = input.nextInt();
 
-        Calc c = new Calc();
-
-        int resultado;
+        CalculadoraSimples c = new CalculadoraSimples();
 
         if (opcoes != 0){ 
 
             if(opcoes == 1) {
 
-                System.out.println("Digite o Primeiro Valor: ");
-                num1 = input.nextInt();
-                System.out.println("Digite o Segundo Valor: ");
-                num2 = input.nextInt();
+                int resultado = c.Adicao();
 
-                resultado = c.Adicao(num1, num2);
-
-                System.out.println("O resultado foi %d", resultado);
+                System.out.println("O resultado foi " + resultado);
 
             } else if (opcoes == 2) {
 
-                System.out.println("Digite o Primeiro Valor: ");
-                num1 = input.nextInt();
-                System.out.println("Digite o Segundo Valor: ");
-                num2 = input.nextInt();
+                int resultado = c.Subtracao();
 
-                resultado = c.Subtracao(num1, num2);
-
-                System.out.println("O resultado foi %d", resultado);
+                System.out.println("O resultado foi " + resultado);
 
             } else if (opcoes == 3) {
 
-                System.out.println("Digite o Primeiro Valor: ");
-                num1 = input.nextInt();
-                System.out.println("Digite o Segundo Valor: ");
-                num2 = input.nextInt();
+                int resultado = c.Divisao();
 
-                resultado = c.Divisao(num1, num2);
-
-                System.out.println("O resultado foi %d", resultado);
+                System.out.println("O resultado foi " + resultado);
 
             } else if (opcoes == 4) {
 
-                System.out.println("Digite o Primeiro Valor: ");
-                num1 = input.nextInt();
-                System.out.println("Digite o Segundo Valor: ");
-                num2 = input.nextInt();
+                int resultado = c.Multipicacao();
 
-                resultado = c.Multipicacao(num1, num2);
-
-                System.out.println("O resultado foi %d", resultado);
+                System.out.println("O resultado foi " + resultado);
 
             }
 
@@ -83,6 +105,8 @@ public class Calc {
             System.out.println("Até depois!!");
 
         }
+        
+        input.close();
     
     }
 
